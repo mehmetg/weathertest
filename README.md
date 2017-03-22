@@ -16,7 +16,7 @@ Exercises the URL below using Selenium:
 https://www.wunderground.com/us/ca/freedom/zmw:95073.1.99999?MR=1
 * Checks history tab link and if link leads to a history page
 * Checks if the cursor with all the labels shows up and updates as the user hovers on the weathe graph. (Mildly, flakly, it may need a few tweaks to make sure hover happens after the graph is loaded and functional)
-* Checks if custumize menu for the graph works and checks the initial state and functionality of the 'Dew Point" checkbox
+* Checks if customize menu for the graph works and checks the initial state and functionality of the 'Dew Point" checkbox
 
 The data models can be modified to force the field names to what was in the instructions, but if done so all tests in this category would fail consistently.
 
@@ -24,9 +24,17 @@ The data models can be modified to force the field names to what was in the inst
 * wget
 * jdk8u121
 * mvn 3.3.9
+* Safari 10
 
 ## Usage
 * Run the `bootstrap.sh` script from the project root.
 * Run the `start_se.sh` script from the project root. (in a separate terminal)
 * Run `mvn verify`
+
+## Known Issues:
+* SafariDriver ang GeckoDriver do not get along with Se too well. It requires some **shimming** to work
+* Selenium server needs to be started manually.
+* The moveTo command is sensitive to mouse movement, so ideally the UI tests should run headless or unattended.
+
+
 

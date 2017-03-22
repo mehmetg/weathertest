@@ -3,8 +3,10 @@ package com.mehmetg.weathertest.uitests.tests;
 
 import com.mehmetg.weathertest.uitests.pages.HistoryPage;
 import com.mehmetg.weathertest.uitests.pages.WeatherPage;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
@@ -24,9 +26,10 @@ public class WeatherPageTest extends UITestBase {
 
     protected WeatherPage weatherPage;
 
-//    public WeatherPageTest(DesiredCapabilities desiredCaps) {
-//        super(desiredCaps);
-//    }
+    @Factory(dataProvider = "browserConfigurations")
+    public WeatherPageTest(DesiredCapabilities desiredCaps) {
+        super(desiredCaps);
+    }
     @Override
     @BeforeMethod
     public void setUp() throws Exception{

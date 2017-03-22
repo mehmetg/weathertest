@@ -15,16 +15,15 @@ public class UITestBase {
     protected WebDriver driver;
     protected DesiredCapabilities desiredCapabilities;
 
-//    @Factory(dataProvider = "browserConfigurations")
-//    public UITestBase(DesiredCapabilities desiredCaps) {
-//        this.desiredCapabilities = desiredCaps;
-//    }
+    public UITestBase(DesiredCapabilities desiredCaps) {
+        this.desiredCapabilities = desiredCaps;
+    }
 
     @DataProvider(name = "browserConfigurations", parallel = true)
     public static Object[][] browserConfigurations() {
         return new Object[][]{
                 new Object[]{DesiredCapabilities.chrome()},
-                new Object[]{DesiredCapabilities.firefox()},
+                //new Object[]{DesiredCapabilities.firefox()},
                 // new Object[]{DesiredCapabilities.safari()}
         };
     }
@@ -33,8 +32,7 @@ public class UITestBase {
     public void setUp() throws Exception {
         this.driver = new RemoteWebDriver(
                 new URL("http", "localhost", 4444, "/wd/hub"),
-                DesiredCapabilities.chrome()
-                //this.desiredCapabilities
+                this.desiredCapabilities
         );
     }
 
