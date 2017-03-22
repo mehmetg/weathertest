@@ -6,7 +6,7 @@
 Exercises the endpoint below: http://api.wunderground.com/api/5c25f5ea989a5950/conditions/q/CA/San_Francisco.json
 * Checks version to be "0.1" (not "v0.1" as documentation suggests)
 * Checks current_observation.temp_f and current_observation.temp_c for unit conversion errors. (Does not check `current_conditions.*` as the field does not exist.)
-* Checks if `current_observation.observation_time` is within 5 minutes of current time hence the right date. (Does not check `current_observation.*` as the field does not exist.)
+* Checks if `current_observation.observation_time` is within 5 minutes of current time hence the right date. (Does not check `current_conditions.*` as the field does not exist.)
 
 The data models can be modified to force the field names to what was in the instructions, but if done so all tests in this category would fail consistently.
 
