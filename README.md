@@ -31,7 +31,7 @@ The data models can be modified to force the field names to what was in the inst
 * Run `mvn verify`
 
 ## Known Issues:
-* SafariDriver ang GeckoDriver do not get along with Se too well. It requires some **shimming** to work
+* SafariDriver and GeckoDriver do not get along with Se too well. It requires some **shimming** to work
 * Selenium server needs to be started manually.
 * The moveTo command is sensitive to mouse movement, so ideally the UI tests should run headless or unattended.
 
